@@ -12,7 +12,7 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 # Mensagens iniciais
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_first_name = update.effective_user.first_name
-    reply_keyboard = [['Jogos', 'Campeonato', 'Eventos']]
+    reply_keyboard = [['Jogos', 'Campeonato', 'Eventos', 'Ranking Valve']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=True)
     
     await update.message.reply_text(
@@ -32,18 +32,20 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "/furico - Fala sobre o mascote Furico.\n"
         "/eventos - Informa sobre os próximos eventos da FURIA.\n"
         "/campeonato - Mostra o campeonato atual em que a FURIA está participando.\n"
+        "/rankingvalve - Mostra o ranking da Valve, e a FURIA está em 11°! Vamos em busca do Top 1!\n"
         "Basta clicar nos botões ou digitar um comando para saber mais! 😉"
     )
-	
+
+# Comando /rankingvalve
+async def rankingvalve(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("🏅 Ranking da Valve estamos em 11°! Vamos em busca do Top 1!")
+
 # Comandos
 async def jogos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏆 Hoje temos FURIA vs (NOME DO TIME). Bora dar show! 🔥")
 
-async def rankingfas(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def ranking(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏅 Ranking de fãs em construção! Em breve você poderá ver quem é torcedor raiz!")
-    
-async def rankingvalve(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("🏅 Ranking da Valve estamos em 11°! Vamos em busca do Top 1!")
 
 async def furico(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("😎 Eu sou o Furico, a pantera mais braba do CS! Tá pronto pra torcer com a gente?")
@@ -52,7 +54,7 @@ async def eventos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("📅 O próximo evento será um Meet & Greet no dia (DIA DO EVENTO)! Não fique de fora!")
 
 async def campeonato(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("🎯 Vamos estar jogando o Pgl Astana 2025! Começando em 10/05/25 Vamos meter bala! 🔫")
+    await update.message.reply_text("🎯 Estamos jogando o (NOME DO CAMPEONATO)! Vamos meter bala! 🔫")
 
 # Resposta para mensagens do teclado personalizado
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -63,6 +65,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await campeonato(update, context)
     elif text == "eventos":
         await eventos(update, context)
+    elif text == "ranking valve":
+        await rankingvalve(update, context)
     else:
         await update.message.reply_text("Não entendi... 😅 Manda um comando ou escolhe uma opção!")
 
@@ -79,6 +83,7 @@ def main() -> None:
     app.add_handler(CommandHandler("furico", furico))
     app.add_handler(CommandHandler("eventos", eventos))
     app.add_handler(CommandHandler("campeonato", campeonato))
+    app.add_handler(CommandHandler("rankingvalve", rankingvalve))  # Comando /rankingvalve
 
     # Adiciona o handler para mensagens gerais, fora dos comandos específicos
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
@@ -88,4 +93,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
