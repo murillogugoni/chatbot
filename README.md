@@ -68,3 +68,17 @@ Bot Furico:
 Python 3.11
 python-telegram-bot
 SQLite
+
+
+
+
+
+/jogos → Exibe os jogos do dia.
+
+/ranking → Mostra o ranking dos torcedores que mais interagem.
+
+/furico → Inicia uma conversa divertida com o mascote Furico.
+
+/eventos → Lista os próximos eventos oficiais do time.
+
+/campeonato → Informa sobre o campeonato atual que o time está disputando.
