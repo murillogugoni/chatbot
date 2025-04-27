@@ -65,7 +65,7 @@ def main() -> None:
     app.add_handler(CommandHandler("campeonato", campeonato))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    print("Bot Furico rodando... 🦊")
+    print("Bot Furico rodando... ")
     app.run_polling()
 
 if __name__ == "__main__":

@@ -1,32 +1,70 @@
-# Furia CS eSports Bot 🦊
+🦊 Furia CS eSports Bot - "Furico"
+Um bot interativo no Telegram feito para fãs da FURIA de CS:GO!
+Ele traz novidades, resultados, interações divertidas com o mascote "Furico" e muito mais.
 
-Um bot interativo no Telegram feito para fãs da FURIA de CS:GO!  
-Ele traz novidades, resultados, interações divertidas e muito mais.
+📋 Planejamento do Projeto
+🎯 Objetivo
+Criar um chat para fãs da FURIA CS:GO acompanharem e interagirem com o time de forma divertida e em tempo real.
 
-## Funcionalidades
-Resultados de jogos em tempo real
-Mostrar placares atuais dos jogos.
-Conversa com o mascote "Furico"
-Respostas divertidas.
+📚 Funcionalidades Iniciais (MVP)
+/jogos → Exibe os jogos do dia.
 
-Responder perguntas sobre o time ou jogos.
-Mensagens de motivação ou brincadeiras aleatórias.
-Sistema de pontuação de fãs
-Pontuar quem mais conversa com o bot.
-Exibir um ranking dos top torcedores.
+/ranking → Mostra o ranking dos torcedores que mais interagem.
 
-Agenda: Próximos jogos e eventos
-Listar os próximos confrontos.
-Alertar quando um jogo estiver para começar.
-Mostrar eventos como campeonatos especiais, meet & greet, etc.
+/furico → Inicia uma conversa divertida com o mascote Furico.
 
-## Tecnologias
-- Python 3.11
-- python-telegram-bot
+/eventos → Lista os próximos eventos oficiais do time.
 
-## Como rodar
-```bash
-git clone https://github.com/murillogugoni/chatbot.git
-cd chatbot
-pip install -r requirements.txt
-python bot/main.py
+/campeonato → Informa sobre o campeonato atual que o time está disputando.
+
+🛠️ Base de Dados
+Banco de dados: SQLite (leve e simples para início).
+
+Armazena:
+
+Pontuação dos fãs baseada em interações.
+
+Histórico básico de interações (se necessário).
+
+🦊 Tom de Voz do Mascote "Furico"
+Estilo: Engraçado, leve e brincalhão.
+
+Puxa conversa de forma divertida.
+
+Faz piadas sobre adversários, motiva os torcedores e cria apelidos carinhosos para os usuários.
+
+🔥 Fluxo Inicial de Conversa
+plaintext
+Copiar
+Editar
+Usuário inicia o bot ➔
+
+Bot Furico:
+"Olá (NOME DA PESSOA)! 🦊
+Eu sou o Furico, seu guia pelo mundo insano da FURIA! 
+O que você quer saber hoje? 😎"
+
+[Opções para o usuário]
+- Jogos
+- Campeonato
+- Eventos
+
+Usuário escolhe "Jogos" ➔
+
+Bot Furico:
+"Claro! 🏆 Hoje temos FURIA vs (NOME DO TIME). Bora dar show! 🔥"
+
+Usuário escolhe "Campeonato" ➔
+
+Bot Furico:
+"Estamos jogando o (NOME DO CAMPEONATO) e vamos meter bala! 🔫 Quer ver outra coisa?"
+
+Usuário escolhe "Eventos" ➔
+
+Bot Furico:
+"Nosso próximo evento será um Meet & Greet no dia (DIA DO EVENTO)! Não fique de fora!"
+
+🚀 Tecnologias Utilizadas
+Python 3.11
+python-telegram-bot
+SQLite
