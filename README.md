@@ -7,15 +7,22 @@ Ele traz novidades, resultados, interações divertidas com o mascote "Furico" e
 Criar um chat para fãs da FURIA CS:GO acompanharem e interagirem com o time de forma divertida e em tempo real.
 
 📚 Funcionalidades Iniciais (MVP)
-/jogos → Exibe os jogos do dia.
+- **/start**: Inicia a conversa e apresenta o Furico, o mascote da FURIA.
+- **/help**: Exibe a lista de comandos disponíveis para interagir com o bot.
+- **/jogos**: Mostra os jogos programados para o dia da FURIA.
+- **/ranking**: Mostra o ranking de fãs (em breve!).
+- **/furico**: Fala sobre o mascote Furico.
+- **/eventos**: Informa sobre os próximos eventos da FURIA.
+- **/campeonato**: Mostra os campeonatos atuais em que a FURIA está participando.
+- **/rankingvalve**: Mostra o ranking da Valve (atualmente, a FURIA está em 11° lugar!).
+- **/outrosjogosfuria**: Exibe informações sobre os outros jogos da FURIA, como **League of Legends** e **Valorant**.
 
-/ranking → Mostra o ranking dos torcedores que mais interagem.
+### Exemplo de Interação
 
-/furico → Inicia uma conversa divertida com o mascote Furico.
+1. Ao iniciar o bot com o comando `/start`, o bot irá pedir que você escolha uma opção (Jogos, Campeonato, Eventos, Ranking Valve, Outros Jogos da FURIA).
+2. Você pode clicar nas opções disponíveis ou digitar um comando para obter mais informações.
+3. O comando `/outrosjogosfuria` vai exibir informações sobre os outros jogos da FURIA, como **CBLOL** para **League of Legends** e **VCT** para **Valorant**.
 
-/eventos → Lista os próximos eventos oficiais do time.
-
-/campeonato → Informa sobre o campeonato atual que o time está disputando.
 
 🛠️ Base de Dados
 Banco de dados: SQLite (leve e simples para início).
@@ -73,12 +80,3 @@ SQLite
 
 
 
-/jogos → Exibe os jogos do dia.
-
-/ranking → Mostra o ranking dos torcedores que mais interagem.
-
-/furico → Inicia uma conversa divertida com o mascote Furico.
-
-/eventos → Lista os próximos eventos oficiais do time.
-
-/campeonato → Informa sobre o campeonato atual que o time está disputando.
