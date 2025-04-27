@@ -12,7 +12,7 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 # Mensagens iniciais
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_first_name = update.effective_user.first_name
-    reply_keyboard = [['Jogos', 'Campeonato', 'Eventos', 'Ranking Valve']]
+    reply_keyboard = [['Jogos', 'Campeonato', 'Eventos', 'Ranking Valve', 'Outros Jogos da FURIA']]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=True)
     
     await update.message.reply_text(
@@ -33,12 +33,22 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "/eventos - Informa sobre os próximos eventos da FURIA.\n"
         "/campeonato - Mostra o campeonato atual em que a FURIA está participando.\n"
         "/rankingvalve - Mostra o ranking da Valve, e a FURIA está em 11°! Vamos em busca do Top 1!\n"
+        "/outrosjogosfuria - Mostra os outros jogos da FURIA no LoL e Valorant.\n"
         "Basta clicar nos botões ou digitar um comando para saber mais! 😉"
     )
 
+# Comando /rankingvalve
 async def rankingvalve(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏅 Ranking da Valve estamos em 11°! Vamos em busca do Top 1!")
 
+# Comando /outrosjogosfuria
+async def outrosjogosfuria(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("🎮 Outros jogos da FURIA:\n"
+                                    "- **League of Legends**: FURIA está competindo no **CBLOL 2025**! Não perca a ação!\n"
+                                    "- **Valorant**: FURIA é presença garantida no **VCT 2025**! Vamos meter bala nas competições!\n\n"
+                                    "Acompanhe e torça pela FURIA nesses outros jogos também! 🔥")
+
+# Comandos
 async def jogos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏆 Hoje temos FURIA vs (Sem adversario definido ainda). Bora dar show! 🔥")
 
@@ -65,6 +75,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await eventos(update, context)
     elif text == "ranking valve":
         await rankingvalve(update, context)
+    elif text == "outros jogos da furia":
+        await outrosjogosfuria(update, context)
     else:
         await update.message.reply_text("Não entendi... 😅 Manda um comando ou escolhe uma opção!")
 
@@ -82,11 +94,12 @@ def main() -> None:
     app.add_handler(CommandHandler("eventos", eventos))
     app.add_handler(CommandHandler("campeonato", campeonato))
     app.add_handler(CommandHandler("rankingvalve", rankingvalve))  # Comando /rankingvalve
+    app.add_handler(CommandHandler("outrosjogosfuria", outrosjogosfuria))  # Comando /outrosjogosfuria
 
     # Adiciona o handler para mensagens gerais, fora dos comandos específicos
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    print("Bot Furico rodando... 🦊")
+    print("Bot Furico rodando... ")
     app.run_polling()
 
 if __name__ == "__main__":
