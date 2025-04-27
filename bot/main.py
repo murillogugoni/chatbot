@@ -18,7 +18,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(
         f"Olá {user_first_name}! \n"
         "Eu sou o Furico, seu guia pelo mundo insano da FURIA!\n"
-        "O que você quer saber hoje? 😎",
+        "O que você quer saber hoje? 😎\n",
+        "Utilize o /help para ver a lista de comandos",
         reply_markup=markup
     )
 
