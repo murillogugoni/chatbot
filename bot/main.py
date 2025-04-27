@@ -36,13 +36,11 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "Basta clicar nos botões ou digitar um comando para saber mais! 😉"
     )
 
-# Comando /rankingvalve
 async def rankingvalve(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏅 Ranking da Valve estamos em 11°! Vamos em busca do Top 1!")
 
-# Comandos
 async def jogos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("🏆 Hoje temos FURIA vs (NOME DO TIME). Bora dar show! 🔥")
+    await update.message.reply_text("🏆 Hoje temos FURIA vs (Sem adversario definido ainda). Bora dar show! 🔥")
 
 async def ranking(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("🏅 Ranking de fãs em construção! Em breve você poderá ver quem é torcedor raiz!")
@@ -51,10 +49,10 @@ async def furico(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("😎 Eu sou o Furico, a pantera mais braba do CS! Tá pronto pra torcer com a gente?")
 
 async def eventos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("📅 O próximo evento será um Meet & Greet no dia (DIA DO EVENTO)! Não fique de fora!")
+    await update.message.reply_text("📅 O próximo evento será um Meet & Greet entre os dias 01 e 04/05 na gamescon Latam! Não fique de fora!")
 
 async def campeonato(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("🎯 Estamos jogando o (NOME DO CAMPEONATO)! Vamos meter bala! 🔫")
+    await update.message.reply_text("🎯 Estamos jogando o Pgl Astana 2025! Vamos meter bala! 🔫")
 
 # Resposta para mensagens do teclado personalizado
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
