@@ -3,7 +3,10 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from dotenv import load_dotenv
 import os
 
+# Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
+
+# Agora você pode acessar o token usando os.getenv
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Mensagens iniciais
