@@ -1,5 +1,5 @@
 🦊 Furia CS eSports Bot - "Furico"
-Um bot interativo no Telegram feito para fãs da FURIA de CS:GO!
+Um bot interativo no Telegram feito para fãs da FURIA de CS!
 Ele traz novidades, resultados, interações divertidas com o mascote "Furico" e muito mais.
 
 📋 Planejamento do Projeto
