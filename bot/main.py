@@ -1,5 +1,10 @@
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Mensagens iniciais
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
