@@ -87,14 +87,14 @@ def main() -> None:
 
     # Adiciona os handlers para os comandos
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("help", help))  # Comando /help
+    app.add_handler(CommandHandler("help", help)) 
     app.add_handler(CommandHandler("jogos", jogos))
     app.add_handler(CommandHandler("ranking", ranking))
     app.add_handler(CommandHandler("furico", furico))
     app.add_handler(CommandHandler("eventos", eventos))
     app.add_handler(CommandHandler("campeonato", campeonato))
-    app.add_handler(CommandHandler("rankingvalve", rankingvalve))  # Comando /rankingvalve
-    app.add_handler(CommandHandler("outrosjogosfuria", outrosjogosfuria))  # Comando /outrosjogosfuria
+    app.add_handler(CommandHandler("rankingvalve", rankingvalve))  
+    app.add_handler(CommandHandler("outrosjogosfuria", outrosjogosfuria))  
 
     # Adiciona o handler para mensagens gerais, fora dos comandos específicos
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
